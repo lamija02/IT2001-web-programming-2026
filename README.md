@@ -12,5 +12,6 @@ Users place orders; each order contains order items; each order item refers to a
 
 ## Run locally
 
-Place the project under XAMPP's `htdocs` folder and open `http://localhost:8080/IT2001-web-programming-2026/frontend/` when Apache uses port 8080. No database or backend service is needed for Milestone 1.
+Place the project under XAMPP's `htdocs` folder and open `http://localhost:8080/IT2001-web-programming-2026/frontend/` when Apache uses port 8080.
+No database or backend service is needed for Milestone 1.
 
