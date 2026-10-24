@@ -21,5 +21,6 @@ Milestone 1 covers project structure, static frontend pages and components, and 
 
 - Use descriptive, lowercase file names.
 - Keep HTML, CSS, and JavaScript in their respective frontend folders.
+- Keep the shared page shell in `frontend/index.html` and load view templates from `frontend/views/`.
 - Do not put credentials or secrets in frontend files.
 - Keep the README accurate to the current milestone.
