@@ -9,7 +9,7 @@
 ### Errors noticed and corrected
 
 1. The first frontend draft used “openpage” as the store name instead of OnlineBookstore. This was noticed while reviewing the page against the project topic, and the visible store name was changed to OnlineBookstore.
-2. An initial attempt to change the order of the featured books did not update the displayed order. The user noticed the list was still incorrect; the featured-book ID list was then rewritten in the requested order and checked against it.
+2. An initial attempt to change the order of the featured books did not update the displayed order. The featured-book ID list was then rewritten in the requested order and checked against it.
 
 - Milestone review: the frontend remains a static Milestone 1 prototype.
 
