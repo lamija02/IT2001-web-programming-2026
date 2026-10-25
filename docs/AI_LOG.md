@@ -1,17 +1,15 @@
-# AI usage log
+# AI Log
 
-## Milestone 1 review
+## Milestone 1
 
-- Tools used: OpenAI Codex and ImageGen.
-- Parts assisted: reviewing the supplied course materials, preparing the project structure, building and updating the static frontend, creating a sharper version of the supplied homepage image, drafting the ERD and README, and reviewing the milestone files.
-- Prompt summaries: prepare the Milestone 1 OnlineBookstore project using the supplied materials; update the book titles, covers, ordering, and categories on the homepage; keep the frontend static and the backend limited to the required folder structure.
+### Tools and tasks
 
-### Errors noticed and corrected
+- OpenAI Codex (model details were not recorded for the earlier project work): reviewed the supplied course and project documents, prepared the frontend/backend folder structure, built and updated the static SPA, drafted the ERD and README, and checked the project against Milestone 1. Prompt summary: implement only the Milestone 1 part of the OnlineBookstore project, using the supplied materials and keeping later milestone work out. The project structure, SPA, ERD, and README draft were kept; the student later specified changes to the featured books, categories, ordering, and images, which were applied.
+- Web search: looked up book-cover references for the selected catalog and recorded source links in `docs/cover-sources.md`. Prompt excerpt: “za svaku knjigu nadji kako izgledaju korice i stavi ih umjesto trenutnih slika”. The selected cover files and source list were kept in the project.
+- ImageGen: created a sharper derivative of the user-provided book-stack image for the homepage after the student asked to sharpen it and remove the surrounding frame. The derivative was kept as the homepage image.
+- OpenAI Codex (model details not recorded): updated the milestone documentation from Lab 01.01 and added the Frontend, Backend, and Reviewer agents and the `update-ai-log` skill. Prompt excerpt: “hajde riješi to i pushaj na github, nemoj da nesta fali”. The student requested that this work be pushed on `milestone1`.
 
-1. The first frontend draft used “openpage” as the store name instead of OnlineBookstore. This was noticed while reviewing the page against the project topic, and the visible store name was changed to OnlineBookstore.
-2. An initial attempt to change the order of the featured books did not update the displayed order. The featured-book ID list was then rewritten in the requested order and checked against it.
+### Where the AI was wrong
 
-- Milestone review: the frontend remains a static Milestone 1 prototype.
-
-
-This log records the work completed in this milestone; it will be updated if additional AI-assisted work is done.
+1. The first frontend draft used “openpage” as the store name instead of OnlineBookstore. The mismatch was noticed while reviewing the page against the project topic, and the visible store name was changed to OnlineBookstore.
+2. An initial attempt to change the order of the featured books did not update the displayed order. The student noticed the list was still wrong; the featured-book ID list was rewritten in the requested order and checked against it.

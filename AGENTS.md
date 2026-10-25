@@ -1,27 +1,55 @@
-# Project context
+# OnlineBookstore project context
 
-OnlineBookstore is a single-page web application being developed in milestones for IT 2001 Web Programming.
+OnlineBookstore is a bookstore web application for the IT 2001 Web Programming course. The current work is Milestone 1.
 
-## Technology and structure
+## Roles and planned data
 
-- Frontend: HTML, CSS, and JavaScript.
-- Backend: PHP REST API and MySQL, to be developed in later milestones.
-- Keep frontend and backend code separate.
-- Frontend files belong in `frontend/`; backend files belong in `backend/`.
-- Frontend views are static in Milestone 1 and must not make backend requests.
-- Keep forms, cart, and dashboard as static previews; do not persist or process user data in this milestone.
-- Keep the user interface responsive and navigate between SPA views without full page reloads.
-- Keep `backend/config/config.php`, logs, and `backend/vendor/` out of Git.
+- Customer: browses books and categories, and will manage their cart, profile, and orders.
+- Admin: will manage the bookstore catalog in a later milestone.
+- Planned entities: Users, Books, Categories, Orders, and OrderItems.
 
-## Current milestone
+## Technology and architecture
 
-Milestone 1 covers project structure, static frontend pages and components, and a draft ERD. Do not implement database access, backend routes, authentication, or API integration as part of this milestone.
+- Frontend: HTML, CSS, and JavaScript in `frontend/`.
+- Planned backend: PHP with FlightPHP, using PDO to access MySQL, in `backend/`.
+- Keep frontend and backend code separate. Frontend files must not contain backend or database code.
+- The frontend is a single-page application. Shared page structure is in `frontend/index.html`; page templates are in `frontend/views/`; shared styles and scripts are in `frontend/css/` and `frontend/js/`.
+- Keep the frontend static in Milestone 1. Do not add authentication, database access, backend routes, API requests, or data persistence. Forms, cart, and account pages are previews.
+- The external book-information feature is planned for the book detail page. Do not implement it in Milestone 1.
+- Keep the interface responsive and use the existing visual style and conventions.
 
-## Naming and editing
+## Folder structure
 
-- Use descriptive, lowercase file names.
-- Keep HTML, CSS, and JavaScript in their respective frontend folders.
-- Keep the shared page shell in `frontend/index.html` and load view templates from `frontend/views/`.
-- Do not put credentials or secrets in frontend files.
-- Keep the README accurate to the current milestone.
+```text
+.agents/
+  skills/
+    update-ai-log/
+      SKILL.md
+.github/
+  agents/
+    backend.agent.md
+    frontend.agent.md
+    reviewer.agent.md
+backend/
+  config/
+  dao/
+  logs/
+  middleware/
+  routes/
+  services/
+docs/
+frontend/
+  assets/
+    covers/
+  css/
+  js/
+  views/
+```
 
+## File and security rules
+
+- Keep PHP files in `backend/`; keep HTML, CSS, and JavaScript in their corresponding `frontend/` folders.
+- Use clear, lowercase file names and make small, focused changes.
+- Never put passwords, API keys, or other secrets in committed files. Keep local configuration, log files, and `backend/vendor/` out of Git.
+- Keep the README, ERD, and AI usage log accurate to the current milestone.
+- Before finishing a task, summarize the changed files and any checks performed.
