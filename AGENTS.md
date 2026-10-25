@@ -40,7 +40,5 @@ frontend/
 ## File and security rules
 
 - Keep PHP files in `backend/`; keep HTML, CSS, and JavaScript in their corresponding `frontend/` folders.
-- Use clear, lowercase file names and make small, focused changes.
 - Never put passwords, API keys, or other secrets in committed files. Keep local configuration, log files, and `backend/vendor/` out of Git.
 - Keep the README, ERD, and AI usage log accurate to the current milestone.
-- Before finishing a task, summarize the changed files and any checks performed.
