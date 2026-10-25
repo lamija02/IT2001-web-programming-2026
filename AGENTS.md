@@ -21,15 +21,6 @@ OnlineBookstore is a bookstore web application for the IT 2001 Web Programming c
 ## Folder structure
 
 ```text
-.agents/
-  skills/
-    update-ai-log/
-      SKILL.md
-.github/
-  agents/
-    backend.agent.md
-    frontend.agent.md
-    reviewer.agent.md
 backend/
   config/
   dao/
