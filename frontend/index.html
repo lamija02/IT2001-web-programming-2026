@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse featured books, discover categories, and explore the OnlineBookstore collection.">
+    <title>OnlineBookstore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="OnlineBookstore home">
+            <span class="brand-mark" aria-hidden="true">O</span>
+            <span>OnlineBookstore</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+        <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+            <a href="#catalog" data-nav-link>Discover</a>
+            <a href="#categories" data-nav-link>Categories</a>
+            <a href="#orders" data-nav-link>My orders</a>
+        </nav>
+        <div class="header-actions">
+            <a class="icon-link" href="#profile" aria-label="Profile"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20c.5-3.3 2.8-5.2 6.5-5.2s6 1.9 6.5 5.2"></path></svg><span class="action-label">Profile</span></a>
+            <a class="cart-link" href="#cart" aria-label="Shopping cart"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="19" r="1.4"></circle><circle cx="18" cy="19" r="1.4"></circle></svg><span class="cart-count">0</span></a>
+            <a class="sign-in-link" href="#login">Sign in</a>
+        </div>
+    </header>
+
+    <main id="app" tabindex="-1" aria-live="polite">
+        <div class="loading-state">Loading the bookstore…</div>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">O</span><span>OnlineBookstore</span></a>
+        <p>A little more room for good stories.</p>
+        <span>OnlineBookstore</span>
+    </footer>
+</body>
+    
+</html>
