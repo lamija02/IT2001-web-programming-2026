@@ -46,10 +46,3 @@ frontend/
   js/
   views/
 ```
-
-## File and security rules
-
-- Keep PHP files in `backend/`; keep HTML, CSS, and JavaScript in their corresponding `frontend/` folders.
-- Keep real local database credentials in ignored `backend/config/config.php`; commit only `config.example.php`.
-- Keep log files and `backend/vendor/` out of Git.
-- Keep the README, ERD, and AI usage log accurate to the active milestone.
