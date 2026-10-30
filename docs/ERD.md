@@ -1,5 +1,6 @@
 # OnlineBookstore ERD
 
+
 This schema is implemented in `database/online_bookstore.sql` for Milestone 2.
 
 ```mermaid
