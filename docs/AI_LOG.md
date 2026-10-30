@@ -16,5 +16,5 @@
 
 ### Corrections
 
-1. The first ERD version showed every order as requiring at least one order item. Comparing the diagram with the foreign-key constraints showed that the database permits an order with no items, so the relationship was changed to zero or more items.
+1. I temporarily changed the order-to-items relationship to zero or more based only on what the foreign key permits. The bookstore rule is that a placed order must contain at least one item, so the ERD was corrected to one or more; enforcing that minimum in the application is a separate validation.
 2. The README still had a section from earlier project work, although the requested README should cover the current milestone. This was noticed during review and that section was removed.
