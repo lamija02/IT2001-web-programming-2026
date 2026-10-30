@@ -2,10 +2,6 @@
 
 OnlineBookstore is a static bookstore interface for browsing books and categories.
 
-## Milestone 1
-
-The frontend contains static pages with SPA navigation and is not connected to the data layer.
-
 ## Milestone 2
 
 The MySQL schema and sample data are in [database/online_bookstore.sql](database/online_bookstore.sql). The PDO data access layer has a shared `BaseDao` and DAOs for Users, Books, Categories, Orders, and OrderItems. Routes, services, and frontend/database integration are not part of this milestone.

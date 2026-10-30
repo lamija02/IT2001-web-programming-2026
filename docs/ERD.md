@@ -5,7 +5,7 @@ This schema is implemented in `database/online_bookstore.sql` for Milestone 2.
 ```mermaid
 erDiagram
     USERS ||--o{ ORDERS : places
-    ORDERS ||--|{ ORDER_ITEMS : contains
+    ORDERS ||--o{ ORDER_ITEMS : contains
     BOOKS ||--o{ ORDER_ITEMS : appears_in
     CATEGORIES ||--o{ BOOKS : groups
 
@@ -44,4 +44,4 @@ erDiagram
     }
 ```
 
-The five entities are Users, Books, Categories, Orders, and OrderItems. A user can place orders; each order contains order items; each order item refers to a book; and a category groups books. Foreign keys connect each dependent table to its parent. The `order_items` table stores the purchase price for each book in an order.
+The five entities are Users, Books, Categories, Orders, and OrderItems. A user may place zero or more orders, and each order belongs to one user. An order may have zero or more order items; each item belongs to one order and refers to one book. A book may appear in zero or more order items. A category may group zero or more books, and each book belongs to one category. Foreign keys connect each dependent table to its parent. The `order_items` table stores the purchase price for each book in an order.
