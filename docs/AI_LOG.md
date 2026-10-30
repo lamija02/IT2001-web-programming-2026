@@ -4,11 +4,13 @@
 
 ### Tools and tasks
 
-- OpenAI Codex: reviewed the supplied course and project documents, prepared the frontend folder structure and checked the project against Milestone 1. 
-- Web search: looked up book-cover references for the selected catalog and recorded source links in `docs/cover-sources.md`. 
-- OpenAI Codex: updated the milestone documentation from Lab 01.01.
+- OpenAI Codex: created and updated the static OnlineBookstore SPA, its views, navigation and responsive styling; prepared the project structure, draft ERD and README; and applied requested changes to the book and category content.
+
+### Main prompts
+
+- Prompt summary: implement only Milestone 1 for the OnlineBookstore using the supplied introductory materials, with a static frontend.
 
 ### Where the AI was wrong
 
-1. The first frontend draft used “openpage” as the store name instead of OnlineBookstore. The mismatch was noticed while reviewing the page against the project topic, and the visible store name was changed to OnlineBookstore.
-2. An initial attempt to change the order of the featured books did not update the displayed order. The student noticed the list was still wrong; the featured-book ID list was rewritten in the requested order and checked against it.
+1. The first frontend draft used “openpage” as the store name instead of OnlineBookstore. The mismatch was noticed while checking the page against the project topic, and the visible name was corrected.
+2. The M1 branch was missing `update-ai-log` skill required by Lab 01.01, and the SPA fetched the same view again on later visits. 
