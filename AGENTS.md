@@ -1,6 +1,6 @@
 # OnlineBookstore project context
 
-OnlineBookstore is a bookstore web application for the IT 2001 Web Programming course. Milestone 1 provides the static frontend; the active implementation is Milestone 2.
+OnlineBookstore is a bookstore web application for the IT Web Programming course. Milestone 1 provides the static frontend; the active implementation is Milestone 2.
 
 ## Project
 
@@ -68,10 +68,8 @@ frontend/
 ## Rules for AI assistants
 
 - Read this file and the active milestone requirements before changing files.
-- Work only on the milestone requested. Do not add later-milestone features.
 - Do not add libraries or frameworks without asking first.
 - Do not change the database schema unless the user asks for that change.
 - Keep real credentials in the ignored `backend/config/config.php`; commit only `config.example.php`.
 - Do not edit files in `backend/logs/`.
 - Do not commit or push unless the user explicitly approves it.
-- Make small changes and report which files changed and why.
