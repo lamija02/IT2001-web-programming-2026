@@ -43,6 +43,24 @@ const featuredBookIds = [
 ];
 
 const app = document.querySelector('#app');
+const viewCache = new Map();
+
+async function loadView(file) {
+    if (!viewCache.has(file)) {
+        const request = fetch(`views/${file}`).then(response => {
+            if (!response.ok) throw new Error('View could not be loaded');
+            return response.text();
+        });
+        viewCache.set(file, request);
+    }
+
+    try {
+        return await viewCache.get(file);
+    } catch {
+        viewCache.delete(file);
+        throw new Error('View could not be loaded');
+    }
+}
 
 function currentView() {
     const requested = window.location.hash.slice(1).split('/')[0];
@@ -71,9 +89,7 @@ async function renderView() {
     app.innerHTML = '<div class="loading-state">Loading…</div>';
 
     try {
-        const response = await fetch(`views/${file}`);
-        if (!response.ok) throw new Error('View could not be loaded');
-        app.innerHTML = await response.text();
+        app.innerHTML = await loadView(file);
         document.querySelectorAll('[data-nav-link]').forEach(link => {
             if (link.getAttribute('href') === `#${view}`) link.setAttribute('aria-current', 'page');
             else link.removeAttribute('aria-current');

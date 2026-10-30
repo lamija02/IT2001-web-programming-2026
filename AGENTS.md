@@ -50,7 +50,7 @@ frontend/
 ## Frontend rules
 
 - Keep HTML views in `frontend/views/`, styles in `frontend/css/`, scripts in `frontend/js/`, and static assets in `frontend/assets/`.
-- Keep SPA navigation and the existing visual style. Do not add backend requests during Milestone 2.
+- Keep SPA navigation and the existing visual style. Load each view template only once per browser session. Do not add backend requests during Milestone 2.
 
 ## Backend rules
 
