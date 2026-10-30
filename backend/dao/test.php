@@ -64,19 +64,30 @@ try {
     $order = $orderDao->create([
         'user_id' => (int) $user['user_id'],
         'status' => 'completed',
-    ]);
-    $orderItemOne = $orderItemDao->create([
-        'order_id' => (int) $order['order_id'],
+        'items' => [[
         'book_id' => (int) $bookOne['book_id'],
         'quantity' => 1,
         'unit_price' => 5.99,
-    ]);
-    $orderItemTwo = $orderItemDao->create([
-        'order_id' => (int) $order['order_id'],
+        ], [
         'book_id' => (int) $bookTwo['book_id'],
         'quantity' => 1,
         'unit_price' => 6.99,
+        ]],
     ]);
+    $orderItems = array_values(array_filter(
+        $orderItemDao->getAll(),
+        static fn (array $item): bool => (int) $item['order_id'] === (int) $order['order_id']
+    ));
+    $orderItemOne = $orderItems[0];
+    $orderItemTwo = $orderItems[1];
+
+    $emptyOrderRejected = false;
+    try {
+        $orderDao->create(['user_id' => (int) $user['user_id'], 'status' => 'pending', 'items' => []]);
+    } catch (InvalidArgumentException) {
+        $emptyOrderRejected = true;
+    }
+    ensure($emptyOrderRejected, 'The DAO accepted an order without items.');
 
     $rows = [
         [$userDao, $user, 'user_id'],
