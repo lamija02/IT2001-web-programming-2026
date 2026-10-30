@@ -18,6 +18,7 @@ OnlineBookstore is a bookstore web application for the IT 2001 Web Programming c
 - Keep SQL in DAO classes. Use prepared statements for values and allow only known table and column names in generated SQL.
 - Do not add services, routes, API endpoints, authentication, or frontend/database integration in Milestone 2; those belong to later milestones.
 
+
 ## Folder structure
 
 ```text
