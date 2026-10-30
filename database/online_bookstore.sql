@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS books (
     price DECIMAL(10, 2) UNSIGNED NOT NULL,
     rating DECIMAL(3, 2) UNSIGNED NULL,
     category_id INT UNSIGNED NOT NULL,
+    CONSTRAINT chk_books_rating CHECK (rating IS NULL OR rating <= 5),
     CONSTRAINT fk_books_category
         FOREIGN KEY (category_id) REFERENCES categories (category_id)
         ON UPDATE CASCADE ON DELETE RESTRICT
@@ -48,6 +49,7 @@ CREATE TABLE IF NOT EXISTS order_items (
     book_id INT UNSIGNED NOT NULL,
     quantity INT UNSIGNED NOT NULL DEFAULT 1,
     unit_price DECIMAL(10, 2) UNSIGNED NOT NULL,
+    CONSTRAINT chk_order_items_quantity CHECK (quantity >= 1),
     CONSTRAINT uq_order_items_order_book UNIQUE (order_id, book_id),
     CONSTRAINT fk_order_items_order
         FOREIGN KEY (order_id) REFERENCES orders (order_id)
