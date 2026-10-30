@@ -81,3 +81,4 @@ INSERT INTO orders (order_id, user_id, status, ordered_at) VALUES
 INSERT INTO order_items (order_item_id, order_id, book_id, quantity, unit_price) VALUES
     (1, 1, 1, 1, 12.99),
     (2, 1, 5, 1, 14.99);
+
