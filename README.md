@@ -10,6 +10,7 @@ The MySQL schema and sample data are in [database/online_bookstore.sql](database
 
 Users place orders; each order contains order items; each order item refers to a book; and categories group books. The schema has Users, Books, Categories, Orders, and OrderItems: [docs/ERD.md](docs/ERD.md).
 
+
 ## Run locally
 
 1. Place the project under XAMPP's `htdocs` folder.
