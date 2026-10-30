@@ -14,9 +14,10 @@ Users place orders; each order contains order items; each order item refers to a
 ## Run locally
 
 1. Place the project under XAMPP's `htdocs` folder.
-2. Start MySQL and import `database/online_bookstore.sql` with phpMyAdmin.
+2. Start MySQL and import `database/online_bookstore.sql` once with phpMyAdmin.
 3. Copy `backend/config/config.example.php` to `backend/config/config.php` and set the local database credentials there. The local `config.php` is ignored by Git.
-4. Open `http://localhost:8080/IT2001-web-programming-2026/frontend/` when Apache uses port 8080.
+4. Run `php backend/dao/test.php` from the project root to verify the DAO methods.
+5. Open `http://localhost:8080/IT2001-web-programming-2026/frontend/` when Apache uses port 8080.
 
 The storefront remains a static preview; the DAO classes are not connected to frontend pages or API routes in Milestone 2.
 
