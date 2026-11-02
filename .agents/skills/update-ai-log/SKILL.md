@@ -1,6 +1,6 @@
 ---
 name: update-ai-log
-description: Adds an accurate entry to docs/AI_LOG.md about AI use in the active milestone.
+description: Records accurate AI tool use, prompts, results, and corrections in docs/AI_LOG.md for the active milestone.
 ---
 
 # Update the AI log

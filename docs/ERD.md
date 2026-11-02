@@ -1,6 +1,7 @@
-# OnlineBookstore draft ERD
+# OnlineBookstore ERD
 
-This is the Milestone 1 planning draft. It identifies the entities and their relationships; database columns, keys, and implementation will be refined in Milestone 2.
+
+This schema is implemented in `database/online_bookstore.sql` for Milestone 2.
 
 ```mermaid
 erDiagram
@@ -10,20 +11,40 @@ erDiagram
     CATEGORIES ||--o{ BOOKS : groups
 
     USERS {
-        int user_id
+        int user_id PK
+        varchar full_name
+        varchar email UK
+        timestamp created_at
     }
     BOOKS {
-        int book_id
+        int book_id PK
+        varchar title
+        varchar author
+        text description
+        decimal price
+        decimal rating
+        int category_id FK
     }
     CATEGORIES {
-        int category_id
+        int category_id PK
+        varchar name UK
+        varchar description
     }
     ORDERS {
-        int order_id
+        int order_id PK
+        int user_id FK
+        varchar status
+        datetime ordered_at
     }
     ORDER_ITEMS {
-        int order_item_id
+        int order_item_id PK
+        int order_id FK
+        int book_id FK
+        int quantity
+        decimal unit_price
     }
 ```
 
-The five planned entities are Users, Books, Categories, Orders, and OrderItems. A user can place orders; each order contains order items; each order item refers to a book; and a category groups books.
+The five entities are Users, Books, Categories, Orders, and OrderItems. A user may place zero or more orders, and each order belongs to one user. Every placed order contains one or more order items; each item belongs to one order and refers to one book. A book may appear in zero or more order items. A category may group zero or more books, and each book belongs to one category. Foreign keys connect each dependent table to its parent. The `order_items` table stores the purchase price for each book in an order. A book rating, when present, must be from 0 to 5, and an order item quantity must be at least 1.
+
+The one-or-more rule describes a valid placed order. The foreign key in `order_items` ensures each item belongs to an order, but does not by itself prevent an empty row in `orders`. Order creation must require at least one item.
