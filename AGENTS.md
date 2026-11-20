@@ -71,9 +71,6 @@ frontend/
 
 ## Rules for AI assistants
 
-- Read this file and the active milestone requirements before changing files.
-- Do not add libraries or frameworks without asking first.
 - Do not change the database schema unless the user asks for that change.
 - Keep real credentials in the ignored `backend/config/config.php`; commit only `config.example.php`.
-- Do not edit files in `backend/logs/`.
 - Do not commit or push unless the user explicitly approves it.
