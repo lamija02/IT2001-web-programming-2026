@@ -27,4 +27,14 @@ final class Config
     {
         return '';
     }
+
+    public static function OPEN_LIBRARY_SEARCH_URL(): string
+    {
+        return 'https://openlibrary.org/search.json';
+    }
+
+    public static function EXTERNAL_API_TIMEOUT(): int
+    {
+        return 5;
+    }
 }

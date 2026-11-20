@@ -9,4 +9,15 @@ final class UserDao extends BaseDao
     {
         parent::__construct('users', 'user_id', ['full_name', 'email']);
     }
+
+    public function getByEmail(string $email): ?array
+    {
+        $statement = $this->connection->prepare(
+            'SELECT * FROM users WHERE email = :email LIMIT 1'
+        );
+        $statement->execute(['email' => $email]);
+        $user = $statement->fetch();
+
+        return $user === false ? null : $user;
+    }
 }

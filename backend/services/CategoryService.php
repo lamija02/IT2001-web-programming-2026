@@ -49,7 +49,7 @@ final class CategoryService extends BaseService
         if (!is_string($data['name'])) {
             throw new ValidationException("Field 'name' must be text.");
         }
-        Validator::length($data['name'], 'name', 1, 80);
+        Validator::length($data['name'], 'name', 2, 80);
 
         if (array_key_exists('description', $data) && $data['description'] !== null) {
             if (!is_string($data['description'])) {

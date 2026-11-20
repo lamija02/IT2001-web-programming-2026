@@ -28,6 +28,14 @@ abstract class BaseDao
         return $statement->fetchAll();
     }
 
+    public function countAll(): int
+    {
+        $statement = $this->connection->prepare(sprintf('SELECT COUNT(*) FROM `%s`', $this->tableName));
+        $statement->execute();
+
+        return (int) $statement->fetchColumn();
+    }
+
     public function getById(int $id): ?array
     {
         $sql = sprintf(

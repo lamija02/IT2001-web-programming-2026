@@ -1,0 +1,52 @@
+@base = http://localhost:8000
+
+### API status
+GET {{base}}/
+
+### Categories
+GET {{base}}/categories
+
+### Books
+GET {{base}}/books
+
+### Create a book
+POST {{base}}/books
+Content-Type: application/json
+
+{
+  "title": "A new book",
+  "author": "Example Author",
+  "description": "A short description.",
+  "price": 14.99,
+  "rating": 4.5,
+  "category_id": 1
+}
+
+### Users
+GET {{base}}/users
+
+### Orders
+GET {{base}}/orders
+
+### Create an order with its items
+POST {{base}}/orders
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "items": [
+    {
+      "book_id": 1,
+      "quantity": 2
+    }
+  ]
+}
+
+### Dashboard
+GET {{base}}/dashboard
+
+### Search Open Library
+GET {{base}}/external/books?q=The%20Little%20Prince
+
+### OpenAPI document
+GET {{base}}/public/v1/docs/swagger.php

@@ -37,10 +37,13 @@
 ### Tools and tasks
 
 - OpenAI Codex (GPT-6): reviewed the supplied project requirements and labs, checked the existing project and the linked course example, and prepared the initial service layer for categories.
+- OpenAI Codex (GPT-6): extended business rules for categories, books, users, orders, and order items; added REST routes, OpenAPI/Swagger documentation, a dashboard, and external book search. Ran PHP syntax checks and API/CRUD checks.
 - Prompt summary: use only the supplied documents, the completed milestones and the linked project as a reference; implement only an initial part of Milestone 3; do not commit or push.
+- Prompt summary: continue Milestone 3 using the supplied lab materials, project requirements, completed milestones, and the colleague’s project as a reference; complete the backend work without pushing before approval.
 - Added a shared service base, HTTP exceptions, validation helpers and category rules with the DAO queries those rules need. This work is local and awaits review.
 
 ### Where the AI was wrong
 
 1. The initial branch plan used the existing `milestone2` branch as the base. GitHub showed it was six commits behind `main`, so the local `milestone3` branch was created from the current `main`. The remote branch was left unchanged.
 2. The first PDF text extraction command had mismatched parentheses and failed with a syntax error. The command was corrected and the PDFs were re-extracted before review.
+3. OrderService initially used the required-field validator for an array of order items, and transaction handling was initially placed in OrderDao. Review identified both issues; array validation was handled in the service, and transaction handling was moved to OrderService.

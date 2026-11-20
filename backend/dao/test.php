@@ -6,6 +6,7 @@ require_once __DIR__ . '/BookDao.php';
 require_once __DIR__ . '/CategoryDao.php';
 require_once __DIR__ . '/OrderDao.php';
 require_once __DIR__ . '/OrderItemDao.php';
+require_once __DIR__ . '/../services/OrderService.php';
 
 function ensure(bool $condition, string $message): void
 {
@@ -64,27 +65,25 @@ try {
     $order = $orderDao->create([
         'user_id' => (int) $user['user_id'],
         'status' => 'completed',
-        'items' => [[
+    ]);
+    $orderItemOne = $orderItemDao->create([
+        'order_id' => (int) $order['order_id'],
         'book_id' => (int) $bookOne['book_id'],
         'quantity' => 1,
         'unit_price' => 5.99,
-        ], [
+    ]);
+    $orderItemTwo = $orderItemDao->create([
+        'order_id' => (int) $order['order_id'],
         'book_id' => (int) $bookTwo['book_id'],
         'quantity' => 1,
         'unit_price' => 6.99,
-        ]],
     ]);
-    $orderItems = array_values(array_filter(
-        $orderItemDao->getAll(),
-        static fn (array $item): bool => (int) $item['order_id'] === (int) $order['order_id']
-    ));
-    $orderItemOne = $orderItems[0];
-    $orderItemTwo = $orderItems[1];
 
     $emptyOrderRejected = false;
     try {
-        $orderDao->create(['user_id' => (int) $user['user_id'], 'status' => 'pending', 'items' => []]);
-    } catch (InvalidArgumentException) {
+        $orderService = new OrderService($orderDao, $orderItemDao, $bookDao, $userDao, $connection);
+        $orderService->create(['user_id' => (int) $user['user_id'], 'status' => 'pending', 'items' => []]);
+    } catch (ValidationException) {
         $emptyOrderRejected = true;
     }
     ensure($emptyOrderRejected, 'The DAO accepted an order without items.');

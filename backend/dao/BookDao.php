@@ -19,4 +19,14 @@ final class BookDao extends BaseDao
 
         return (int) $statement->fetchColumn();
     }
+
+    public function countByOrderItems(int $bookId): int
+    {
+        $statement = $this->connection->prepare(
+            'SELECT COUNT(*) FROM order_items WHERE book_id = :book_id'
+        );
+        $statement->execute(['book_id' => $bookId]);
+
+        return (int) $statement->fetchColumn();
+    }
 }

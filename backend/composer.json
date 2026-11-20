@@ -1,0 +1,14 @@
+{
+    "name": "online-bookstore/backend",
+    "description": "REST API for the OnlineBookstore project",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "flightphp/core": "^3.19",
+        "zircote/swagger-php": "^6.12"
+    }
+}
