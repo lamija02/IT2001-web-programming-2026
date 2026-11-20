@@ -9,4 +9,15 @@ final class CategoryDao extends BaseDao
     {
         parent::__construct('categories', 'category_id', ['name', 'description']);
     }
+
+    public function getByName(string $name): ?array
+    {
+        $statement = $this->connection->prepare(
+            'SELECT * FROM categories WHERE name = :name LIMIT 1'
+        );
+        $statement->execute(['name' => $name]);
+        $category = $statement->fetch();
+
+        return $category === false ? null : $category;
+    }
 }
