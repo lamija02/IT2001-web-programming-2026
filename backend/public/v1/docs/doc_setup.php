@@ -11,8 +11,11 @@ use OpenApi\Attributes as OA;
 #[OA\Server(url: API_BASE_URL, description: 'Current server')]
 #[OA\Schema(
     schema: 'Error',
-    required: ['error'],
-    properties: [new OA\Property(property: 'error', type: 'string', example: 'Book not found.')]
+    required: ['status', 'error'],
+    properties: [
+        new OA\Property(property: 'status', type: 'integer', example: 400),
+        new OA\Property(property: 'error', type: 'string', example: 'Book not found.')
+    ]
 )]
 #[OA\Schema(
     schema: 'Message',

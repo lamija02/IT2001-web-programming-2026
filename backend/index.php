@@ -46,16 +46,26 @@ Flight::map('error', function (Throwable $exception): void {
         ->clearBody()
         ->status($status)
         ->header('Content-Type', 'application/json')
-        ->write(json_encode(['error' => $message], JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE))
+        ->write(json_encode(
+            ['status' => $status, 'error' => $message],
+            JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE
+        ))
         ->send();
 });
 
 Flight::map('notFound', function (): void {
+    $request = Flight::request();
+    $method = $request->method;
+    $url = strtok((string) $request->url, '?');
+
     Flight::response()
         ->clearBody()
         ->status(404)
         ->header('Content-Type', 'application/json')
-        ->write(json_encode(['error' => 'Endpoint not found.']))
+        ->write(json_encode([
+            'status' => 404,
+            'error' => "Endpoint $method $url does not exist.",
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE))
         ->send();
 });
 

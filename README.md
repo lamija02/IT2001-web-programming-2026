@@ -49,7 +49,7 @@ The local API base URL is `http://localhost:8000/`. Its Swagger page is `/public
 | GET | `/dashboard` | Read bookstore totals |
 | GET | `/external/books?q=...` | Search Open Library for book information |
 
-Successful reads and updates return HTTP 200, creates return 201, validation errors return 400, missing records return 404, and external service failures return 503. Errors use a JSON object with an `error` field; unexpected server errors are recorded under `backend/logs/` and return a generic message.
+Successful reads and updates return HTTP 200, creates return 201, validation errors return 400, missing records return 404, and external service failures return 503. Errors use a JSON object with `status` and `error` fields; unexpected server errors are recorded under `backend/logs/` and return a generic message.
 
 The Open Library search runs through the backend with a timeout. The route returns selected book details for a later frontend feature. The frontend remains static in Milestone 3; backend integration is scheduled for Milestone 4.
 
