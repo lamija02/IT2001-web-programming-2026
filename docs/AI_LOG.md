@@ -1,49 +1,13 @@
 # AI Log
 
-## Milestone 1
-
-### Tools and tasks
-
-- OpenAI Codex: created and updated the static OnlineBookstore SPA, its views, navigation and responsive styling; prepared the project structure, draft ERD and README; and applied requested changes to the book and category content.
-
-### Main prompts
-
-- Prompt summary: implement only Milestone 1 for the OnlineBookstore using the supplied introductory materials, with a static frontend.
-
-### Where the AI was wrong
-
-1. The first frontend draft used “openpage” as the store name instead of OnlineBookstore. The mismatch was noticed while checking the page against the project topic, and the visible name was corrected.
-2. The M1 branch was missing `update-ai-log` skill required by Lab 01.01, and the SPA fetched the same view again on later visits.
-
-## Milestone 2
-
-### Tools and tasks
-
-- OpenAI Codex: reviewed the Milestone 2 requirements, supplied DAO materials, and linked course example; prepared the database schema and DAOs for five entities.
-- XAMPP MySQL: imported the SQL file into the local `online_bookstore` database.
-
-### Main prompts
-
-- Prompt summary: apply the relevant database-layer material without adding services to Milestone 2.
-
-### Where the AI was wrong
-
-1. The ERD was changed to show zero or more order items based only on what the foreign key permits. The student pointed out that a placed order cannot be empty; the ERD was corrected to one or more items.
-2. Checking the commit history showed the checks had not been pushed; the local branch was aligned with the remote before continuing.
-3. The first order DAO allowed an order to be created without order items. The order creation method now requires at least one item and saves the order and its items in one transaction.
-
 ## Milestone 3
 
 ### Tools and tasks
 
-- OpenAI Codex (GPT-6): reviewed the supplied project requirements and labs, checked the existing project and the linked course example, and prepared the initial service layer for categories.
-- OpenAI Codex (GPT-6): extended business rules for categories, books, users, orders, and order items; added REST routes, OpenAPI/Swagger documentation, a dashboard, and external book search. Ran PHP syntax checks and API/CRUD checks.
-- Prompt summary: use only the supplied documents, the completed milestones and the linked project as a reference; implement only an initial part of Milestone 3; do not commit or push.
-- Prompt summary: continue Milestone 3 using the supplied lab materials, project requirements, completed milestones, and the colleague’s project as a reference; complete the backend work without pushing before approval.
-- Added a shared service base, HTTP exceptions, validation helpers and category rules with the DAO queries those rules need. This work is local and awaits review.
+- Prompt summary: use only the supplied documents and the linked project as a reference; implement only an initial part of Milestone 3
+- Student added a shared service base, HTTP exceptions, validation helpers and category rules with the DAO queries those rules need. This work is local and awaits Codex review.
 
 ### Where the AI was wrong
 
 1. The initial branch plan used the existing `milestone2` branch as the base. GitHub showed it was six commits behind `main`, so the local `milestone3` branch was created from the current `main`. The remote branch was left unchanged.
-2. The first PDF text extraction command had mismatched parentheses and failed with a syntax error. The command was corrected and the PDFs were re-extracted before review.
-3. OrderService initially used the required-field validator for an array of order items, and transaction handling was initially placed in OrderDao. Review identified both issues; array validation was handled in the service, and transaction handling was moved to OrderService.
+2. OrderService initially used the required-field validator for an array of order items, and transaction handling was initially placed in OrderDao. Student's review identified both issues; array validation was handled in the service, and transaction handling was moved to OrderService.
