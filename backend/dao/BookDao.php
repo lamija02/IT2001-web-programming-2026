@@ -9,4 +9,24 @@ final class BookDao extends BaseDao
     {
         parent::__construct('books', 'book_id', ['title', 'author', 'description', 'price', 'rating', 'category_id']);
     }
+
+    public function countByCategory(int $categoryId): int
+    {
+        $statement = $this->connection->prepare(
+            'SELECT COUNT(*) FROM books WHERE category_id = :category_id'
+        );
+        $statement->execute(['category_id' => $categoryId]);
+
+        return (int) $statement->fetchColumn();
+    }
+
+    public function countByOrderItems(int $bookId): int
+    {
+        $statement = $this->connection->prepare(
+            'SELECT COUNT(*) FROM order_items WHERE book_id = :book_id'
+        );
+        $statement->execute(['book_id' => $bookId]);
+
+        return (int) $statement->fetchColumn();
+    }
 }
